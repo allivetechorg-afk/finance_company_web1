@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUCCU - Cameroon Unity Cooperative Credit Union | Douala, Cameroon</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for crisp financial & UI icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            850: '#08472D',
+                            900: '#0B5D3B',
+                            950: '#05321F',
+                        },
+                        gold: {
+                            400: '#EAB308',
+                            500: '#D99B26',
+                            600: '#B87D14',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-900 selection:text-white overflow-x-hidden">
+
+    <!-- Top Regulatory & Contact Strip -->
+    <div class="bg-emerald-950 text-emerald-100 text-xs py-2 border-b border-emerald-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center gap-1.5">
+                    <i class="fa-solid fa-shield-halved text-gold-500"></i>
+                    <span data-i18n="top_reg">Category 1 Microfinance Cooperative • COBAC & MINFI Compliant</span>
+                </span>
+                <span class="hidden md:inline-flex items-center gap-1.5 text-emerald-300">
+                    <i class="fa-solid fa-location-dot text-gold-500"></i>
+                    <span>Boulevard de la Liberté, Akwa, Douala</span>
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+237233428890" class="hover:text-gold-400 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-gold-500"></i>
+                    <span>+237 233 42 88 90</span>
+                </a>
+                <span class="text-emerald-700">|</span>
+                <span class="inline-flex items-center gap-1 font-medium text-gold-400">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <span>MTN MoMo & Orange Money Ready</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-900 flex items-center justify-center shadow-md group-hover:bg-emerald-850 transition">
+                        <!-- Custom SVG Cooperative Shield & Unity Emblem -->
+                        <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 3L6 9V19C6 28.2 11.97 36.68 20 39C28.03 36.68 34 28.2 34 19V9L20 3Z" fill="#0B5D3B" stroke="#D99B26" stroke-width="2.5"/>
+                            <circle cx="20" cy="15" r="3.5" fill="#D99B26"/>
+                            <path d="M12.5 26C12.5 22.5 15.8 20.5 20 20.5C24.2 20.5 27.5 22.5 27.5 26" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M15 29.5H25" stroke="#D99B26" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-display font-extrabold text-xl tracking-tight text-emerald-900">CUCCU</span>
+                            <span class="px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 rounded">Cameroon</span>
+                        </div>
+                        <p class="text-[11px] font-medium text-slate-500 leading-tight hidden sm:block" data-i18n="brand_sub">Cameroon Unity Cooperative Credit Union</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700">
+                    <a href="#about" class="hover:text-emerald-900 transition" data-i18n="nav_about">About Us</a>
+                    <a href="#products" class="hover:text-emerald-900 transition" data-i18n="nav_products">Savings & Loans</a>
+                    <a href="#calculator" class="hover:text-emerald-900 transition" data-i18n="nav_calc">Loan Calculator</a>
+                    <a href="#membership" class="hover:text-emerald-900 transition" data-i18n="nav_member">Membership</a>
+                    <a href="#branches" class="hover:text-emerald-900 transition" data-i18n="nav_branches">Branches & Contact</a>
+                </nav>
+
+                <!-- Right Controls: Language Switcher & CTA -->
+                <div class="flex items-center gap-2.5 sm:gap-3">
+                    <!-- Bilingual Toggle (EN / FR) -->
+                    <button id="langToggleBtn" onclick="toggleLanguage()" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 transition cursor-pointer" title="Switch Language / Changer de langue">
+                        <i class="fa-solid fa-globe text-emerald-900"></i>
+                        <span id="currentLangLabel">EN</span>
+                        <span class="text-slate-400">/</span>
+                        <span id="altLangLabel" class="text-slate-400">FR</span>
+                    </button>
+
+                    <!-- Become a Member CTA -->
+                    <button onclick="openModal('membership')" class="hidden sm:inline-flex items-center gap-2 bg-emerald-900 hover:bg-emerald-850 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm hover:shadow transition cursor-pointer">
+                        <span data-i18n="btn_join">Become a Member</span>
+                        <i class="fa-solid fa-arrow-right text-xs text-gold-400"></i>
+                    </button>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none cursor-pointer" aria-label="Toggle Menu">
+                        <i id="mobileMenuIcon" class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg">
+            <a href="#about" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-900" data-i18n="nav_about">About Us</a>
+            <a href="#products" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-900" data-i18n="nav_products">Savings & Loans</a>
+            <a href="#calculator" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-900" data-i18n="nav_calc">Loan Calculator</a>
+            <a href="#membership" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-900" data-i18n="nav_member">Membership</a>
+            <a href="#branches" onclick="closeMobileMenu()" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-900" data-i18n="nav_branches">Branches & Contact</a>
+            <div class="pt-2">
+                <button onclick="closeMobileMenu(); openModal('membership')" class="w-full flex justify-center items-center gap-2 bg-emerald-900 text-white font-semibold py-3 rounded-xl shadow">
+                    <span data-i18n="btn_join">Become a Member</span>
+                    <i class="fa-solid fa-arrow-right text-gold-400"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-emerald-950 text-white overflow-hidden">
+        <!-- Subtle Geometric Cooperative Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="coop-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+                        <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#D99B26" stroke-width="1"/>
+                        <circle cx="24" cy="24" r="2" fill="#D99B26"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#coop-grid)"/>
+            </svg>
+        </div>
+        <!-- Ambient Radial Glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-emerald-700/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-gold-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-28">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-900/90 border border-emerald-700/80 text-emerald-200 text-xs font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+                        <span data-i18n="hero_badge">Authorized Microfinance Cooperative • Douala Headquarters</span>
+                    </div>
+
+                    <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15]">
+                        <span data-i18n="hero_title_1">Empowering Cameroonian Communities Through</span>
+                        <span class="text-gold-400" data-i18n="hero_title_2">Solidarity & Smart Finance.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-emerald-100/90 max-w-2xl leading-relaxed" data-i18n="hero_desc">
+                        From Akwa to Yaoundé, Bafoussam to Bamenda, CUCCU provides secure FCFA (XAF) savings, high annual dividends, Njangi group accounts, and fast low-interest loans built for entrepreneurs, salaried workers, and families.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="openModal('membership')" class="inline-flex items-center gap-2.5 bg-gold-500 hover:bg-gold-600 text-emerald-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-gold-500/20 transition cursor-pointer">
+                            <span data-i18n="hero_cta_1">Open an Account Today</span>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </button>
+                        <a href="#calculator" class="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold px-6 py-3.5 rounded-xl backdrop-blur-sm transition">
+                            <i class="fa-solid fa-calculator text-gold-400"></i>
+                            <span data-i18n="hero_cta_2">Simulate a Loan (XAF)</span>
+                        </a>
+                    </div>
+
+                    <!-- Compliance Badges -->
+                    <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-emerald-200/80 border-t border-emerald-800/80">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400 text-sm"></i>
+                            <span>COBAC & MINFI Regulated</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400 text-sm"></i>
+                            <span>CamCCUL Network Standards</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400 text-sm"></i>
+                            <span>Instant MoMo & OM Deposits</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Card: Member Dividend & Quick Snapshot -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl border border-emerald-800/20 relative">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-900">2025/2026 Financial Year</span>
+                                <h2 class="font-display font-bold text-lg text-slate-900" data-i18n="hero_card_title">Member Wealth Snapshot</h2>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 font-bold text-xs border border-emerald-200">
+                                XAF / FCFA
+                            </span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs font-medium text-slate-500" data-i18n="card_div_label">Annual Share Dividend Rate</p>
+                                    <p class="text-2xl font-extrabold text-emerald-900">6.5% <span class="text-xs font-semibold text-emerald-700">p.a.</span></p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs font-medium text-slate-500" data-i18n="card_loan_label">SME & Member Loan Rate</p>
+                                    <p class="text-2xl font-extrabold text-slate-900">1.25% <span class="text-xs font-semibold text-slate-500">/ month</span></p>
+                                </div>
+                                <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-emerald-900 text-white flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-emerald-200" data-i18n="card_entry_label">Minimum Membership Entry</p>
+                                    <p class="text-lg font-bold text-gold-400">25,000 FCFA <span class="text-xs font-normal text-emerald-100">(Share + Reg.)</span></p>
+                                </div>
+                                <button onclick="openModal('membership')" class="px-3.5 py-2 rounded-lg bg-gold-500 hover:bg-gold-600 text-emerald-950 font-bold text-xs transition cursor-pointer">
+                                    Join Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics / Trust Bar -->
+    <section id="metrics-bar" class="relative -mt-6 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-lg border border-slate-200/80 p-6 sm:p-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-slate-100">
+                <div class="text-center pt-2 sm:pt-0">
+                    <div class="text-3xl sm:text-4xl font-display font-extrabold text-emerald-900">
+                        <span class="counter" data-target="26400" data-suffix="+">0</span>
+                    </div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1" data-i18n="metric_members">Active Cooperative Members</p>
+                </div>
+
+                <div class="text-center pt-4 sm:pt-0">
+                    <div class="text-3xl sm:text-4xl font-display font-extrabold text-emerald-900">
+                        <span class="counter" data-target="14.8" data-decimals="1" data-suffix="B">0</span>
+                    </div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1" data-i18n="metric_assets">Total Assets (FCFA / XAF)</p>
+                </div>
+
+                <div class="text-center pt-4 lg:pt-0">
+                    <div class="text-3xl sm:text-4xl font-display font-extrabold text-gold-600">
+                        <span class="counter" data-target="7" data-suffix=" Branches">0</span>
+                    </div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1" data-i18n="metric_branches">Douala, Yaoundé, West, NW & SW</p>
+                </div>
+
+                <div class="text-center pt-4 lg:pt-0">
+                    <div class="text-3xl sm:text-4xl font-display font-extrabold text-emerald-900">
+                        <span class="counter" data-target="6.5" data-decimals="1" data-suffix="%">0</span>
+                    </div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-600 mt-1" data-i18n="metric_dividend">Annual Member Dividend</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us & Cooperative Governance -->
+    <section id="about" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-landmark"></i>
+                    <span data-i18n="about_tag">Who We Are</span>
+                </div>
+                <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight" data-i18n="about_title">
+                    Owned by Our Members, Built for Cameroon's Economic Growth.
+                </h2>
+                <p class="text-slate-600 leading-relaxed" data-i18n="about_p1">
+                    Founded in Douala in 2008, <strong>Cameroon Unity Cooperative Credit Union (CUCCU)</strong> operates on the democratic cooperative principle of <em>"One Member, One Vote."</em> Unlike traditional commercial banks, our surpluses are returned directly to members as annual dividends and lower loan interest rates.
+                </p>
+                <p class="text-slate-600 leading-relaxed" data-i18n="about_p2">
+                    We bridge the gap between traditional Cameroonian solidarity savings (Njangi / Tontines) and modern digital microfinance, ensuring full transparency under CEMAC / COBAC Category 1 microfinance regulations.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-900 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm" data-i18n="pillar_1_t">Democratic Governance</h3>
+                            <p class="text-xs text-slate-500 mt-0.5" data-i18n="pillar_1_d">Board elected annually by members at our General Assembly.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-sm" data-i18n="pillar_2_t">100% Deposit Security</h3>
+                            <p class="text-xs text-slate-500 mt-0.5" data-i18n="pillar_2_d">Prudential liquidity reserves audited quarterly under COBAC rules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual Governance Card -->
+            <div class="lg:col-span-6">
+                <div class="bg-gradient-to-br from-emerald-900 to-emerald-950 rounded-2xl p-6 sm:p-8 text-white shadow-xl">
+                    <h3 class="font-display font-bold text-xl text-gold-400 mb-4" data-i18n="gov_box_title">Why 26,400+ Cameroonians Trust CUCCU</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3.5 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <span class="w-7 h-7 rounded-full bg-gold-500 text-emerald-950 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                            <div>
+                                <h4 class="font-bold text-sm" data-i18n="gov_1_t">Zero Hidden Account Maintenance Fees</h4>
+                                <p class="text-xs text-emerald-100/80 mt-1" data-i18n="gov_1_d">Your savings grow uninterrupted with annual interest credited directly to your passbook and mobile app.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3.5 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <span class="w-7 h-7 rounded-full bg-gold-500 text-emerald-950 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                            <div>
+                                <h4 class="font-bold text-sm" data-i18n="gov_2_t">48-Hour Loan Disbursement</h4>
+                                <p class="text-xs text-emerald-100/80 mt-1" data-i18n="gov_2_d">Streamlined credit committee reviews for members with regular savings or salary domiciliation.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3.5 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <span class="w-7 h-7 rounded-full bg-gold-500 text-emerald-950 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                            <div>
+                                <h4 class="font-bold text-sm" data-i18n="gov_3_t">Seamless MTN MoMo & Orange Money Bridge</h4>
+                                <p class="text-xs text-emerald-100/80 mt-1" data-i18n="gov_3_d">Fund your CUCCU account or repay loans from anywhere in Cameroon without queuing in banking halls.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Products & Services (Savings & Loans) -->
+    <section id="products" class="py-16 sm:py-24 bg-white border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-coins"></i>
+                    <span data-i18n="prod_tag">Tailored XAF Solutions</span>
+                </span>
+                <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900" data-i18n="prod_title">
+                    Cooperative Savings, Credit & Digital Services
+                </h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base" data-i18n="prod_sub">
+                    Explore our member-centric financial products designed in FCFA (XAF) for individuals, Njangi groups, farmers, and growing SMEs.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="inline-flex flex-wrap justify-center gap-2 bg-slate-100 p-1.5 rounded-xl mt-6 border border-slate-200">
+                    <button onclick="filterProducts('all')" id="tab-all" class="prod-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-emerald-900 text-white shadow-sm transition cursor-pointer" data-i18n="tab_all">
+                        All Services (7)
+                    </button>
+                    <button onclick="filterProducts('savings')" id="tab-savings" class="prod-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition cursor-pointer" data-i18n="tab_savings">
+                        Savings & Njangi
+                    </button>
+                    <button onclick="filterProducts('loans')" id="tab-loans" class="prod-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition cursor-pointer" data-i18n="tab_loans">
+                        Credit & Loans
+                    </button>
+                    <button onclick="filterProducts('digital')" id="tab-digital" class="prod-tab px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition cursor-pointer" data-i18n="tab_digital">
+                        Mobile Money
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Regular & Njangi Savings -->
+                <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-700/50 hover:shadow-lg transition flex flex-col justify-between" data-category="savings">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-900 text-gold-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-users-rays"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold">4.5% - 6.5% p.a.</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Regular & Njangi / Tontine Savings</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Individual passbook savings and multi-signatory group accounts tailored for Cameroonian Njangi/Tontine associations, meeting groups, and family unions.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Min. opening balance: <strong>5,000 FCFA</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Dual/Triple signatory digital controls</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Unlocks 3x loan borrowing power</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('membership', 'Regular & Njangi Savings')" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-emerald-900 text-emerald-900 hover:text-white border border-emerald-900/30 font-semibold text-xs transition cursor-pointer">
+                        Open Njangi / Savings Account
+                    </button>
+                </div>
+
+                <!-- Card 2: Children's Education Savings -->
+                <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-700/50 hover:shadow-lg transition flex flex-col justify-between" data-category="savings">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-900 text-gold-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-800 text-xs font-bold">Back-to-School Plan</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Children's Education Savings</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Prepare stress-free for September school resumption. Accumulate tuition, textbooks, and university funds year-round with bonus interest.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Flexible weekly/monthly deposits from <strong>2,000 FCFA</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Priority August Back-to-School top-up loan</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Zero withdrawal fees in Aug–Sept</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('membership', 'Children Education Savings')" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-emerald-900 text-emerald-900 hover:text-white border border-emerald-900/30 font-semibold text-xs transition cursor-pointer">
+                        Start Education Plan
+                    </button>
+                </div>
+
+                <!-- Card 3: Fixed Term Deposits -->
+                <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-700/50 hover:shadow-lg transition flex flex-col justify-between" data-category="savings">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-900 text-gold-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-vault"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold">Up to 7.5% p.a.</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Fixed Term Deposits (DAT)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Lock in high guaranteed yields on idle capital for 6, 12, or 24 months. Ideal for diaspora members, associations, and institutional reserves.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Minimum deposit: <strong>500,000 FCFA</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Up to 7.5% annual guaranteed return</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Can serve as 90% cash-backed loan collateral</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('membership', 'Fixed Term Deposit')" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-emerald-900 text-emerald-900 hover:text-white border border-emerald-900/30 font-semibold text-xs transition cursor-pointer">
+                        Inquire on Term Rates
+                    </button>
+                </div>
+
+                <!-- Card 4: SME & Business Expansion Loans -->
+                <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-700/50 hover:shadow-lg transition flex flex-col justify-between" data-category="loans">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-emerald-950 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-800 text-xs font-bold">1.25% / month</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">SME & Business Expansion Loans</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Working capital, import/export stock financing, and equipment acquisition for traders in Marché Mboppi, Mokolo, Central Market, and tech startups.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Facility range: <strong>250,000 – 25,000,000 FCFA</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Flexible repayment up to 36 months</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Interest calculated on reducing balance</li>
+                        </ul>
+                    </div>
+                    <button onclick="presetCalculator('sme', 2500000, 18)" class="w-full py-2.5 px-4 rounded-xl bg-emerald-900 hover:bg-emerald-850 text-white font-semibold text-xs transition cursor-pointer">
+                        Simulate SME Loan
+                    </button>
+                </div>
+
+                <!-- Card 5: Agricultural & Agro-Pastoral Loans -->
+                <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-700/50 hover:shadow-lg transition flex flex-col justify-between" data-category="loans">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-emerald-950 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-wheat-awn"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold">1.0% / month</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Agricultural & Agro-Pastoral Loans</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Dedicated seasonal financing for cocoa, coffee, palm oil, cassava, and poultry farmers across Littoral, West, Centre, and South-West regions.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Harvest-aligned grace periods (up to 4 months)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Group solidarity or land title collateral</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Subsidized 1.0% monthly cooperative rate</li>
+                        </ul>
+                    </div>
+                    <button onclick="presetCalculator('agro', 1500000, 12)" class="w-full py-2.5 px-4 rounded-xl bg-emerald-900 hover:bg-emerald-850 text-white font-semibold text-xs transition cursor-pointer">
+                        Simulate Agro Loan
+                    </button>
+                </div>
+
+                <!-- Card 6: Instant Salary Advance & Emergency Loans -->
+                <div class="product-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-700/50 hover:shadow-lg transition flex flex-col justify-between" data-category="loans">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-emerald-950 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-800 text-xs font-bold">24-Hr Approval</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Salary Advance & Emergency Loans</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Rapid liquidity for civil servants and private-sector employees with salary domiciliation at CUCCU, plus urgent medical or family support loans.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Up to 60% of net monthly salary instantly</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Direct disbursement to bank or Mobile Money</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-700"></i> Repayment terms from 3 to 24 months</li>
+                        </ul>
+                    </div>
+                    <button onclick="presetCalculator('salary', 500000, 6)" class="w-full py-2.5 px-4 rounded-xl bg-emerald-900 hover:bg-emerald-850 text-white font-semibold text-xs transition cursor-pointer">
+                        Simulate Salary Loan
+                    </button>
+                </div>
+
+                <!-- Card 7: Mobile Money Integration (Full Width Highlight on Desktop) -->
+                <div class="product-card md:col-span-2 lg:col-span-3 bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white rounded-2xl p-6 sm:p-8 border border-emerald-800 shadow-md flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6" data-category="digital">
+                    <div class="space-y-2 max-w-2xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-400/30 text-gold-300 text-xs font-bold">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <span>CUCCU Digital Bridge • *126# & Orange Money</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white">24/7 MTN MoMo & Orange Money Integration</h3>
+                        <p class="text-sm text-emerald-100/90 leading-relaxed">
+                            Link your CUCCU cooperative account directly to your MTN Mobile Money or Orange Money wallet. Deposit savings, check real-time balances via SMS alerts, and receive approved loan funds directly on your phone anywhere in Cameroon.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
+                        <div class="px-4 py-3 rounded-xl bg-yellow-400 text-slate-950 font-extrabold text-xs text-center shadow">
+                            <span class="block text-[10px] uppercase tracking-wider opacity-80">Partner</span>
+                            MTN MoMo
+                        </div>
+                        <div class="px-4 py-3 rounded-xl bg-orange-500 text-white font-extrabold text-xs text-center shadow">
+                            <span class="block text-[10px] uppercase tracking-wider opacity-90">Partner</span>
+                            Orange Money
+                        </div>
+                        <button onclick="openModal('membership', 'Mobile Money Account Linking')" class="px-5 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-emerald-950 font-bold text-xs transition cursor-pointer">
+                            Activate Mobile Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Loan & Savings Calculator (in FCFA / XAF) -->
+    <section id="calculator" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider mb-3">
+                <i class="fa-solid fa-calculator"></i>
+                <span data-i18n="calc_tag">Transparent FCFA Estimator</span>
+            </span>
+            <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900" data-i18n="calc_title">
+                Interactive Cooperative Loan Calculator
+            </h2>
+            <p class="text-slate-600 mt-3 text-sm sm:text-base" data-i18n="calc_sub">
+                Plan your project with confidence. Adjust the loan category, principal amount in XAF, and duration to view your exact monthly installment.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/90 overflow-hidden">
+            <div class="grid lg:grid-cols-12">
+                <!-- Left Controls -->
+                <div class="lg:col-span-7 p-6 sm:p-10 space-y-7">
+                    <!-- Loan Type Selector -->
+                    <div>
+                        <label for="loanTypeSelect" class="block text-sm font-bold text-slate-800 mb-2" data-i18n="calc_type_label">
+                            1. Select Loan Facility Type
+                        </label>
+                        <select id="loanTypeSelect" onchange="updateCalculator()" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3.5 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-900 focus:border-emerald-900 transition">
+                            <option value="agro" data-rate="1.0">Agricultural & Agro-Pastoral Loan (1.00% / month)</option>
+                            <option value="sme" selected data-rate="1.25">SME & Business Expansion Loan (1.25% / month)</option>
+                            <option value="salary" data-rate="1.35">Salary Advance & Personal Loan (1.35% / month)</option>
+                            <option value="emergency" data-rate="1.50">Instant Emergency / School Fees Loan (1.50% / month)</option>
+                        </select>
+                    </div>
+
+                    <!-- Loan Amount Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="loanAmountRange" class="text-sm font-bold text-slate-800" data-i18n="calc_amt_label">
+                                2. Loan Principal Amount (FCFA / XAF)
+                            </label>
+                            <span id="loanAmountDisplay" class="px-3 py-1 rounded-lg bg-emerald-50 border border-emerald-200 font-display font-extrabold text-emerald-900 text-base sm:text-lg">
+                                2,500,000 FCFA
+                            </span>
+                        </div>
+                        <input id="loanAmountRange" type="range" min="100000" max="20000000" step="100000" value="2500000" oninput="updateCalculator()" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-900">
+                        <div class="flex justify-between text-xs font-medium text-slate-400 mt-1.5">
+                            <span>100,000 FCFA</span>
+                            <span>10,000,000 FCFA</span>
+                            <span>20,000,000 FCFA</span>
+                        </div>
+                    </div>
+
+                    <!-- Repayment Duration Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="loanMonthsRange" class="text-sm font-bold text-slate-800" data-i18n="calc_dur_label">
+                                3. Repayment Duration (Months)
+                            </label>
+                            <span id="loanMonthsDisplay" class="px-3 py-1 rounded-lg bg-amber-50 border border-amber-200 font-display font-extrabold text-amber-800 text-base sm:text-lg">
+                                18 Months
+                            </span>
+                        </div>
+                        <input id="loanMonthsRange" type="range" min="3" max="48" step="1" value="18" oninput="updateCalculator()" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-gold-500">
+                        <div class="flex justify-between text-xs font-medium text-slate-400 mt-1.5">
+                            <span>3 Months</span>
+                            <span>24 Months</span>
+                            <span>48 Months</span>
+                        </div>
+                    </div>
+
+                    <!-- Required Cooperative Savings Note -->
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-info text-emerald-900 mt-0.5"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong>Cooperative Rule:</strong> Members qualify for loans up to <strong>3x their active savings balance</strong>. Required minimum savings for this loan: <span id="requiredSavingsDisplay" class="font-bold text-emerald-900">833,333 FCFA</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Output Summary Panel -->
+                <div class="lg:col-span-5 bg-emerald-950 text-white p-6 sm:p-10 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-gold-400" data-i18n="calc_res_tag">Estimated Repayment Schedule</span>
+                        <div class="mt-4 pb-6 border-b border-emerald-800">
+                            <p class="text-xs text-emerald-200" data-i18n="calc_monthly_label">Monthly Installment</p>
+                            <p id="monthlyPaymentDisplay" class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-1">
+                                156,142 FCFA
+                            </p>
+                            <p class="text-xs text-emerald-300 mt-1">Calculated on reducing monthly balance</p>
+                        </div>
+
+                        <div class="py-6 space-y-4 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="text-emerald-200">Principal Requested:</span>
+                                <span id="summaryPrincipal" class="font-bold">2,500,000 FCFA</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-emerald-200">Monthly Interest Rate:</span>
+                                <span id="summaryRate" class="font-bold text-gold-400">1.25% / mo</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-emerald-200">Total Interest Payable:</span>
+                                <span id="summaryInterest" class="font-bold">310,556 FCFA</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3 border-t border-emerald-800 text-base">
+                                <span class="font-semibold text-emerald-100">Total Repayment:</span>
+                                <span id="summaryTotal" class="font-extrabold text-gold-400">2,810,556 FCFA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <button onclick="applyFromCalculator()" class="w-full py-3.5 px-6 rounded-xl bg-gold-500 hover:bg-gold-600 text-emerald-950 font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
+                            <span data-i18n="calc_apply_btn">Apply for This Loan</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <p class="text-[11px] text-center text-emerald-300/80">
+                            No obligation pre-assessment • Credit officer response within 24h
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Requirements & Onboarding Steps -->
+    <section id="membership" class="py-16 sm:py-24 bg-slate-100/80 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <!-- Left: Step-by-Step Guide -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span data-i18n="mem_tag">Join the Cooperative</span>
+                    </span>
+                    <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900" data-i18n="mem_title">
+                        How to Become a CUCCU Member in 3 Simple Steps
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed" data-i18n="mem_sub">
+                        Membership is open to all Cameroonian citizens, residents, registered Njangi groups, and local enterprises. Become a co-owner in less than 15 minutes.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <!-- Step 1 -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-900 text-white font-display font-extrabold flex items-center justify-center shrink-0">01</div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Submit Online Pre-Registration or Visit Any Branch</h3>
+                                <p class="text-sm text-slate-600 mt-1">Complete our digital pre-registration form online or walk into any CUCCU branch in Douala, Yaoundé, Bafoussam, Bamenda, or Buea.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-900 text-white font-display font-extrabold flex items-center justify-center shrink-0">02</div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Provide KYC Identification Documents</h3>
+                                <p class="text-sm text-slate-600 mt-1">Present a valid Cameroon National Identity Card (CNI) or Passport (or valid receipt + birth certificate), 2 passport-size photos, and a localization sketch (Plan de localisation).</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500 text-emerald-950 font-display font-extrabold flex items-center justify-center shrink-0">03</div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Subscribe to Cooperative Shares & Initial Deposit</h3>
+                                <p class="text-sm text-slate-600 mt-1">Pay your one-time registration fee and subscribe to your member shares via cash, MTN MoMo, or Orange Money to receive your Passbook & Member Number immediately.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Entry Fee Breakdown Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-200">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                            <h3 class="font-display font-bold text-lg text-slate-900">Initial Membership Package</h3>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-900 font-bold text-xs">Individual</span>
+                        </div>
+
+                        <div class="divide-y divide-slate-100 my-4 text-sm">
+                            <div class="py-3 flex justify-between items-center">
+                                <span class="text-slate-600">Registration & Passbook Fee</span>
+                                <span class="font-bold text-slate-900">5,000 FCFA</span>
+                            </div>
+                            <div class="py-3 flex justify-between items-center">
+                                <span class="text-slate-600">Minimum Cooperative Share Capital (Dividend-earning)</span>
+                                <span class="font-bold text-slate-900">15,000 FCFA</span>
+                            </div>
+                            <div class="py-3 flex justify-between items-center">
+                                <span class="text-slate-600">Initial Regular Savings Deposit</span>
+                                <span class="font-bold text-slate-900">5,000 FCFA</span>
+                            </div>
+                            <div class="py-3 flex justify-between items-center">
+                                <span class="text-slate-600">Solidarity / Mutual Protection Fund</span>
+                                <span class="font-bold text-slate-900">2,000 FCFA</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex justify-between items-center mb-6">
+                            <div>
+                                <span class="block text-xs font-semibold text-emerald-800">Total Entry Package</span>
+                                <span class="text-[11px] text-emerald-700">20,000 FCFA remains 100% your equity & savings</span>
+                            </div>
+                            <span class="font-display text-xl font-extrabold text-emerald-950">27,000 FCFA</span>
+                        </div>
+
+                        <button onclick="openModal('membership')" class="w-full py-3.5 px-5 rounded-xl bg-emerald-900 hover:bg-emerald-850 text-white font-bold text-sm shadow transition flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-file-signature text-gold-400"></i>
+                            <span>Start Online Pre-Registration</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Locator & Contact Section -->
+    <section id="branches" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span data-i18n="branch_tag">National Network</span>
+            </span>
+            <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900" data-i18n="branch_title">
+                Our Branches Across Cameroon
+            </h2>
+            <p class="text-slate-600 mt-3 text-sm sm:text-base" data-i18n="branch_sub">
+                Visit any of our 7 interconnected branches for instant deposits, withdrawals, and personalized financial advisory.
+            </p>
+
+            <!-- City Filter Pills -->
+            <div class="flex flex-wrap justify-center gap-2 mt-6">
+                <button onclick="filterBranches('all')" id="city-all" class="city-btn px-4 py-2 rounded-full text-xs font-bold bg-emerald-900 text-white transition cursor-pointer">All Cities (7)</button>
+                <button onclick="filterBranches('Douala')" id="city-Douala" class="city-btn px-4 py-2 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer">Douala (2)</button>
+                <button onclick="filterBranches('Yaoundé')" id="city-Yaoundé" class="city-btn px-4 py-2 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer">Yaoundé (2)</button>
+                <button onclick="filterBranches('Bafoussam')" id="city-Bafoussam" class="city-btn px-4 py-2 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer">Bafoussam</button>
+                <button onclick="filterBranches('Bamenda')" id="city-Bamenda" class="city-btn px-4 py-2 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer">Bamenda</button>
+                <button onclick="filterBranches('Buea')" id="city-Buea" class="city-btn px-4 py-2 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer">Buea</button>
+            </div>
+        </div>
+
+        <!-- Branches Grid -->
+        <div id="branchesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <!-- Branch 1: Douala Akwa HQ -->
+            <div class="branch-card bg-white rounded-2xl p-6 border-2 border-emerald-900/20 shadow-sm hover:shadow-md transition" data-city="Douala">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-emerald-900 text-gold-400 text-[11px] font-bold uppercase">Headquarters</span>
+                    <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open Now</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Douala – Akwa Head Office</h3>
+                <p class="text-xs text-slate-500 mt-1 flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-emerald-900 mt-0.5"></i>
+                    <span>Boulevard de la Liberté, Face Salle des Fêtes d'Akwa, Douala</span>
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-600"></i> <strong>+237 233 42 88 90</strong> / 677 10 22 30</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-gold-600"></i> Mon–Fri: 08:00 – 16:30 | Sat: 08:30 – 13:00</p>
+                </div>
+            </div>
+
+            <!-- Branch 2: Douala Bonabéri -->
+            <div class="branch-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition" data-city="Douala">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase">Littoral Region</span>
+                    <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open Now</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Douala – Bonabéri Agency</h3>
+                <p class="text-xs text-slate-500 mt-1 flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-emerald-900 mt-0.5"></i>
+                    <span>Ancienne Route Bonabéri, Carrefour Rail, Douala IV</span>
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-600"></i> <strong>+237 233 39 14 22</strong> / 699 45 12 88</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-gold-600"></i> Mon–Fri: 08:00 – 16:30 | Sat: 08:30 – 12:30</p>
+                </div>
+            </div>
+
+            <!-- Branch 3: Yaoundé Bastos -->
+            <div class="branch-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition" data-city="Yaoundé">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase">Centre Region</span>
+                    <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open Now</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Yaoundé – Bastos Regional Office</h3>
+                <p class="text-xs text-slate-500 mt-1 flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-emerald-900 mt-0.5"></i>
+                    <span>Avenue Jean Paul II, Carrefour Bastos, Yaoundé</span>
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-600"></i> <strong>+237 222 20 55 18</strong> / 675 88 19 04</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-gold-600"></i> Mon–Fri: 08:00 – 16:30 | Sat: 08:30 – 13:00</p>
+                </div>
+            </div>
+
+            <!-- Branch 4: Yaoundé Mokolo -->
+            <div class="branch-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition" data-city="Yaoundé">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase">Centre Region</span>
+                    <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open Now</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Yaoundé – Mokolo Market Branch</h3>
+                <p class="text-xs text-slate-500 mt-1 flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-emerald-900 mt-0.5"></i>
+                    <span>Rue du Marché Mokolo, Immeuble Commercial, Yaoundé</span>
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-600"></i> <strong>+237 222 23 71 09</strong> / 691 33 70 12</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-gold-600"></i> Mon–Fri: 07:45 – 16:30 | Sat: 08:00 – 13:30</p>
+                </div>
+            </div>
+
+            <!-- Branch 5: Bafoussam -->
+            <div class="branch-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition" data-city="Bafoussam">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase">West Region</span>
+                    <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open Now</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Bafoussam – Tamdja Branch</h3>
+                <p class="text-xs text-slate-500 mt-1 flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-emerald-900 mt-0.5"></i>
+                    <span>Carrefour Total Tamdja, Boulevard de la République, Bafoussam</span>
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-600"></i> <strong>+237 233 44 62 15</strong> / 678 21 44 09</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-gold-600"></i> Mon–Fri: 08:00 – 16:30 | Sat: 08:30 – 12:30</p>
+                </div>
+            </div>
+
+            <!-- Branch 6: Bamenda -->
+            <div class="branch-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition" data-city="Bamenda">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase">North-West Region</span>
+                    <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open Now</span>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Bamenda – Commercial Avenue</h3>
+                <p class="text-xs text-slate-500 mt-1 flex items-start gap-2">
+                    <i class="fa-solid fa-location-dot text-emerald-900 mt-0.5"></i>
+                    <span>Commercial Avenue, Near City Chemist Roundabout, Bamenda</span>
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-600"></i> <strong>+237 233 36 19 84</strong> / 670 54 31 99</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-gold-600"></i> Mon–Fri: 08:00 – 16:00 | Sat: 08:30 – 12:30</p>
+                </div>
+            </div>
+
+            <!-- Branch 7: Buea -->
+            <div class="branch-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition md:col-span-2 lg:col-span-3" data-city="Buea">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-[11px] font-bold uppercase">South-West Region</span>
+                            <span class="text-xs font-semibold text-emerald-700 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open Now</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-slate-900">Buea – Molyko University Axis Branch</h3>
+                        <p class="text-xs text-slate-500 mt-1 flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-emerald-900"></i>
+                            <span>Molyko High Street, Opposite Dirty South Junction, Buea</span>
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-6 text-xs text-slate-600">
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold-600"></i> <strong>+237 233 32 48 11</strong> / 674 90 12 55</p>
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-gold-600"></i> Mon–Fri: 08:00 – 16:30 | Sat: 08:30 – 12:30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Direct Contact & Member Support Form -->
+        <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 sm:p-10">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <h3 class="font-display text-2xl font-extrabold text-slate-900">Have a Question? Speak With a Member Advisor</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Whether you are setting up a Njangi group account, inquiring about diaspora remittances to Cameroon, or requesting an SME credit appraisal, our Douala Member Relations Desk is ready to assist.
+                    </p>
+                    <div class="space-y-3 pt-2 text-sm">
+                        <div class="flex items-center gap-3 text-slate-700">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-900 flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
+                            <span>contact@cuccu-cameroon.cm</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-700">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-900 flex items-center justify-center"><i class="fa-brands fa-whatsapp text-base"></i></div>
+                            <span>WhatsApp Member Desk: +237 677 10 22 30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
+                        <input type="text" required placeholder="e.g. Ngono Jean-Paul" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number (+237) *</label>
+                        <input type="tel" required placeholder="+237 6XX XX XX XX" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Branch</label>
+                        <select class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                            <option>Douala – Akwa HQ</option>
+                            <option>Douala – Bonabéri</option>
+                            <option>Yaoundé – Bastos</option>
+                            <option>Yaoundé – Mokolo</option>
+                            <option>Bafoussam – Tamdja</option>
+                            <option>Bamenda – Commercial Ave</option>
+                            <option>Buea – Molyko</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Subject</label>
+                        <select class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                            <option>New Membership Inquiry</option>
+                            <option>Njangi / Association Account</option>
+                            <option>SME / Agro Loan Appraisal</option>
+                            <option>Mobile Money / Digital Support</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Your Message *</label>
+                        <textarea rows="3" required placeholder="How can our cooperative team help you today?" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-900"></textarea>
+                    </div>
+                    <div class="sm:col-span-2 flex items-center justify-between gap-4">
+                        <p id="contactFeedback" class="text-xs font-semibold text-emerald-800 hidden"></p>
+                        <button type="submit" class="ml-auto px-6 py-3 rounded-xl bg-emerald-900 hover:bg-emerald-850 text-white font-bold text-sm shadow transition cursor-pointer">
+                            Send Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-emerald-100 pt-16 pb-10 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-900">
+                <!-- Col 1: Brand & Regulatory Statement -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-900 border border-gold-500/40 flex items-center justify-center">
+                            <i class="fa-solid fa-shield-halved text-gold-400 text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="font-display font-extrabold text-xl text-white">CUCCU</span>
+                            <span class="block text-xs text-emerald-300">Cameroon Unity Cooperative Credit Union</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-emerald-200/80 leading-relaxed">
+                        Licensed Category 1 Cooperative Microfinance Institution operating in accordance with CEMAC / COBAC Regulation N° 01/17/CEMAC/UMAC/COBAC and supervised by the Ministry of Finance (MINFI) of the Republic of Cameroon.
+                    </p>
+                    <div class="flex items-center gap-3 pt-1">
+                        <a href="#branches" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-emerald-900 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#branches" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-emerald-900 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#branches" aria-label="WhatsApp" class="w-9 h-9 rounded-lg bg-emerald-900 hover:bg-gold-500 hover:text-emerald-950 flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="font-display font-bold text-sm uppercase tracking-wider text-gold-400">Cooperative Links</h4>
+                    <ul class="space-y-2 text-xs text-emerald-200">
+                        <li><a href="#about" class="hover:text-white transition">Governance & General Assembly</a></li>
+                        <li><a href="#products" class="hover:text-white transition">Njangi & Tontine Accounts</a></li>
+                        <li><a href="#calculator" class="hover:text-white transition">FCFA Loan Simulator</a></li>
+                        <li><a href="#membership" class="hover:text-white transition">Share Capital & Dividends</a></li>
+                        <li><a href="#branches" class="hover:text-white transition">Branch Directory (Cameroon)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Newsletter Signup -->
+                <div class="lg:col-span-4 space-y-3">
+                    <h4 class="font-display font-bold text-sm uppercase tracking-wider text-gold-400">Member Bulletins & Rates</h4>
+                    <p class="text-xs text-emerald-200/80">
+                        Subscribe to receive annual dividend announcements, AGM notices, and SME grant updates.
+                    </p>
+                    <form onsubmit="handleNewsletter(event)" class="flex gap-2">
+                        <input id="newsletterEmail" type="email" required placeholder="Enter your email address" class="w-full rounded-xl bg-emerald-900/80 border border-emerald-700 px-3.5 py-2.5 text-xs text-white placeholder-emerald-400 focus:outline-none focus:border-gold-400">
+                        <button type="submit" class="px-4 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-600 text-emerald-950 font-bold text-xs shrink-0 transition cursor-pointer">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p id="newsletterMsg" class="text-xs text-gold-400 hidden"></p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-300/70">
+                <p>&copy; 2026 Cameroon Unity Cooperative Credit Union (CUCCU). All Rights Reserved. Douala, Cameroon.</p>
+                <p>Currency: Central African CFA Franc (XAF / FCFA)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Membership & Loan Application Modal -->
+    <div id="applicationModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden my-auto">
+            <!-- Modal Header -->
+            <div class="bg-emerald-950 text-white px-6 py-5 flex items-center justify-between">
+                <div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-gold-400" id="modalBadge">Online Pre-Registration</span>
+                    <h3 class="font-display font-bold text-lg" id="modalTitle">Become a CUCCU Member</h3>
+                </div>
+                <button onclick="closeModal()" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition cursor-pointer" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6">
+                <form id="modalForm" onsubmit="handleModalSubmit(event)" class="space-y-4">
+                    <input type="hidden" id="modalRequestType" value="membership">
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Application Category</label>
+                        <select id="modalProductSelect" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm font-semibold text-slate-800 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                            <option value="New Individual Membership">New Individual Membership (27,000 FCFA Package)</option>
+                            <option value="Regular & Njangi Savings">Njangi / Group Association Account</option>
+                            <option value="Children Education Savings">Children's Education Savings Plan</option>
+                            <option value="Fixed Term Deposit">Fixed Term Deposit (DAT)</option>
+                            <option value="SME & Business Expansion Loan">SME & Business Expansion Loan</option>
+                            <option value="Agricultural & Agro-Pastoral Loan">Agricultural & Agro-Pastoral Loan</option>
+                            <option value="Salary Advance & Emergency Loan">Salary Advance & Emergency Loan</option>
+                            <option value="Mobile Money Account Linking">MTN MoMo / Orange Money Wallet Link</option>
+                        </select>
+                    </div>
+
+                    <div id="loanDetailsSummaryBox" class="hidden p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-950 space-y-1">
+                        <p class="font-bold text-amber-900"><i class="fa-solid fa-calculator mr-1"></i> Attached Loan Simulation:</p>
+                        <p id="modalLoanSummaryText"></p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-3.5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name (as on CNI) *</label>
+                            <input type="text" id="applicantName" required placeholder="e.g. Fru Emmanuel" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Phone / WhatsApp (+237) *</label>
+                            <input type="tel" id="applicantPhone" required placeholder="+237 6XX XX XX XX" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-3.5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">CNI / Passport Number *</label>
+                            <input type="text" id="applicantIdNum" required placeholder="e.g. 114892045" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Branch *</label>
+                            <select id="applicantBranch" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                                <option>Douala – Akwa HQ</option>
+                                <option>Douala – Bonabéri</option>
+                                <option>Yaoundé – Bastos</option>
+                                <option>Yaoundé – Mokolo</option>
+                                <option>Bafoussam – Tamdja</option>
+                                <option>Bamenda – Commercial Ave</option>
+                                <option>Buea – Molyko</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Occupation / Business Activity</label>
+                        <input type="text" id="applicantOccupation" placeholder="e.g. Civil Servant, Trader, Agro-entrepreneur..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-900">
+                    </div>
+
+                    <div class="pt-2 flex items-center justify-end gap-3">
+                        <button type="button" onclick="closeModal()" class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs hover:bg-slate-50 transition cursor-pointer">
+                            Cancel
+                        </button>
+                        <button type="submit" class="px-6 py-2.5 rounded-xl bg-emerald-900 hover:bg-emerald-850 text-white font-bold text-xs shadow transition flex items-center gap-2 cursor-pointer">
+                            <span>Submit Application</span>
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Confirmation State -->
+                <div id="modalSuccessState" class="hidden text-center py-6 space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-900 flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h4 class="font-display font-extrabold text-xl text-slate-900">Application Reference Generated!</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed" id="modalSuccessMessage">
+                        Thank you! Your pre-registration has been logged with our member onboarding desk.
+                    </p>
+                    <div class="p-3 rounded-xl bg-slate-100 border border-slate-200 font-mono text-sm font-bold text-emerald-900" id="referenceCodeBox">
+                        REF: CUCCU-2026-8492
+                    </div>
+                    <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-emerald-900 text-white font-bold text-xs hover:bg-emerald-850 transition cursor-pointer">
+                        Done & Return to Site
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification (No alert() used anywhere) -->
+    <div id="toastBanner" class="fixed bottom-5 right-5 z-50 hidden max-w-sm bg-emerald-950 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-gold-500/40 flex items-center gap-3 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-gold-400 text-lg"></i>
+        <p id="toastText" class="text-xs font-medium leading-snug"></p>
+    </div>
+
+    <!-- Application JavaScript -->
+    <script>
+        // ==========================================
+        // 1. BILINGUAL DICTIONARY (ENGLISH / FRANÇAIS)
+        // ==========================================
+        let currentLang = 'EN';
+
+        const translations = {
+            EN: {
+                top_reg: "Category 1 Microfinance Cooperative • COBAC & MINFI Compliant",
+                brand_sub: "Cameroon Unity Cooperative Credit Union",
+                nav_about: "About Us",
+                nav_products: "Savings & Loans",
+                nav_calc: "Loan Calculator",
+                nav_member: "Membership",
+                nav_branches: "Branches & Contact",
+                btn_join: "Become a Member",
+                hero_badge: "Authorized Microfinance Cooperative • Douala Headquarters",
+                hero_title_1: "Empowering Cameroonian Communities Through",
+                hero_title_2: "Solidarity & Smart Finance.",
+                hero_desc: "From Akwa to Yaoundé, Bafoussam to Bamenda, CUCCU provides secure FCFA (XAF) savings, high annual dividends, Njangi group accounts, and fast low-interest loans built for entrepreneurs, salaried workers, and families.",
+                hero_cta_1: "Open an Account Today",
+                hero_cta_2: "Simulate a Loan (XAF)",
+                hero_card_title: "Member Wealth Snapshot",
+                card_div_label: "Annual Share Dividend Rate",
+                card_loan_label: "SME & Member Loan Rate",
+                card_entry_label: "Minimum Membership Entry",
+                metric_members: "Active Cooperative Members",
+                metric_assets: "Total Assets (FCFA / XAF)",
+                metric_branches: "Douala, Yaoundé, West, NW & SW",
+                metric_dividend: "Annual Member Dividend",
+                about_tag: "Who We Are",
+                about_title: "Owned by Our Members, Built for Cameroon's Economic Growth.",
+                about_p1: "Founded in Douala in 2008, Cameroon Unity Cooperative Credit Union (CUCCU) operates on the democratic cooperative principle of \"One Member, One Vote.\" Unlike traditional commercial banks, our surpluses are returned directly to members as annual dividends and lower loan interest rates.",
+                about_p2: "We bridge the gap between traditional Cameroonian solidarity savings (Njangi / Tontines) and modern digital microfinance, ensuring full transparency under CEMAC / COBAC Category 1 microfinance regulations.",
+                pillar_1_t: "Democratic Governance",
+                pillar_1_d: "Board elected annually by members at our General Assembly.",
+                pillar_2_t: "100% Deposit Security",
+                pillar_2_d: "Prudential liquidity reserves audited quarterly under COBAC rules.",
+                gov_box_title: "Why 26,400+ Cameroonians Trust CUCCU",
+                gov_1_t: "Zero Hidden Account Maintenance Fees",
+                gov_1_d: "Your savings grow uninterrupted with annual interest credited directly to your passbook and mobile app.",
+                gov_2_t: "48-Hour Loan Disbursement",
+                gov_2_d: "Streamlined credit committee reviews for members with regular savings or salary domiciliation.",
+                gov_3_t: "Seamless MTN MoMo & Orange Money Bridge",
+                gov_3_d: "Fund your CUCCU account or repay loans from anywhere in Cameroon without queuing in banking halls.",
+                prod_tag: "Tailored XAF Solutions",
+                prod_title: "Cooperative Savings, Credit & Digital Services",
+                prod_sub: "Explore our member-centric financial products designed in FCFA (XAF) for individuals, Njangi groups, farmers, and growing SMEs.",
+                tab_all: "All Services (7)",
+                tab_savings: "Savings & Njangi",
+                tab_loans: "Credit & Loans",
+                tab_digital: "Mobile Money",
+                calc_tag: "Transparent FCFA Estimator",
+                calc_title: "Interactive Cooperative Loan Calculator",
+                calc_sub: "Plan your project with confidence. Adjust the loan category, principal amount in XAF, and duration to view your exact monthly installment.",
+                calc_type_label: "1. Select Loan Facility Type",
+                calc_amt_label: "2. Loan Principal Amount (FCFA / XAF)",
+                calc_dur_label: "3. Repayment Duration (Months)",
+                calc_res_tag: "Estimated Repayment Schedule",
+                calc_monthly_label: "Monthly Installment",
+                calc_apply_btn: "Apply for This Loan",
+                mem_tag: "Join the Cooperative",
+                mem_title: "How to Become a CUCCU Member in 3 Simple Steps",
+                mem_sub: "Membership is open to all Cameroonian citizens, residents, registered Njangi groups, and local enterprises. Become a co-owner in less than 15 minutes.",
+                branch_tag: "National Network",
+                branch_title: "Our Branches Across Cameroon",
+                branch_sub: "Visit any of our 7 interconnected branches for instant deposits, withdrawals, and personalized financial advisory."
+            },
+            FR: {
+                top_reg: "Coopérative de Microfinance 1ère Catégorie • Agréée COBAC & MINFI",
+                brand_sub: "Coopérative d'Épargne et de Crédit Unité du Cameroun",
+                nav_about: "À Propos",
+                nav_products: "Épargne & Crédits",
+                nav_calc: "Simulateur de Prêt",
+                nav_member: "Adhésion",
+                nav_branches: "Agences & Contact",
+                btn_join: "Devenir Membre",
+                hero_badge: "Coopérative de Microfinance Agréée • Siège Social Douala",
+                hero_title_1: "Bâtir la Prospérité des Communautés Camerounaises par",
+                hero_title_2: "la Solidarité Financière.",
+                hero_desc: "D'Akwa à Yaoundé, de Bafoussam à Bamenda, la CUCCU offre une épargne sécurisée en FCFA (XAF), des dividendes annuels attractifs, des comptes Tontines/Njangi et des crédits rapides à taux préférentiels.",
+                hero_cta_1: "Ouvrir un Compte",
+                hero_cta_2: "Simuler un Crédit (XAF)",
+                hero_card_title: "Aperçu Financier des Membres",
+                card_div_label: "Taux de Dividende Annuel",
+                card_loan_label: "Taux Crédit PME & Membres",
+                card_entry_label: "Adhésion Minimale",
+                metric_members: "Membres Coopérateurs Actifs",
+                metric_assets: "Total des Actifs (FCFA / XAF)",
+                metric_branches: "Douala, Yaoundé, Ouest, NO & SO",
+                metric_dividend: "Dividende Annuel Membre",
+                about_tag: "Qui Sommes-Nous",
+                about_title: "Détenue par ses Membres, au Service de l'Économie Camerounaise.",
+                about_p1: "Fondée à Douala en 2008, la Cameroon Unity Cooperative Credit Union (CUCCU) fonctionne selon le principe démocratique « Un Membre, Une Voix ». Nos excédents sont redistribués directement aux membres sous forme de dividendes.",
+                about_p2: "Nous allions la solidarité traditionnelle camerounaise (Tontines / Njangi) à la microfinance digitale moderne sous la supervision réglementaire CEMAC / COBAC.",
+                pillar_1_t: "Gouvernance Démocratique",
+                pillar_1_d: "Conseil d'administration élu chaque année en Assemblée Générale.",
+                pillar_2_t: "Sécurité Totale des Dépôts",
+                pillar_2_d: "Réserves prudentielles auditées trimestriellement selon les normes COBAC.",
+                gov_box_title: "Pourquoi plus de 26 400 Camerounais Choisissent la CUCCU",
+                gov_1_t: "Zéro Frais Cachés de Tenue de Compte",
+                gov_1_d: "Votre épargne fructifie sans interruption avec intérêts crédités chaque année.",
+                gov_2_t: "Déblocage de Crédit sous 48 Heures",
+                gov_2_d: "Étude accélérée des dossiers pour les membres épargnants et salariés domiciliés.",
+                gov_3_t: "Passerelle MTN MoMo & Orange Money",
+                gov_3_d: "Alimentez votre compte ou remboursez vos crédits à distance partout au Cameroun.",
+                prod_tag: "Solutions en Francs CFA",
+                prod_title: "Épargne Coopérative, Crédits & Services Mobiles",
+                prod_sub: "Découvrez nos produits conçus en FCFA (XAF) pour les particuliers, associations, tontines, agriculteurs et PME.",
+                tab_all: "Tous les Services (7)",
+                tab_savings: "Épargne & Tontines",
+                tab_loans: "Crédits & Prêts",
+                tab_digital: "Mobile Money",
+                calc_tag: "Simulateur Transparent en FCFA",
+                calc_title: "Calculateur Interactif de Crédit Coopératif",
+                calc_sub: "Planifiez votre projet en toute clarté. Choisissez le type de prêt, le montant en XAF et la durée pour connaître votre mensualité.",
+                calc_type_label: "1. Choisissez le Type de Crédit",
+                calc_amt_label: "2. Montant du Prêt (FCFA / XAF)",
+                calc_dur_label: "3. Durée de Remboursement (Mois)",
+                calc_res_tag: "Échéancier Estimatif",
+                calc_monthly_label: "Mensualité Estimée",
+                calc_apply_btn: "Demander ce Crédit",
+                mem_tag: "Rejoindre la Coopérative",
+                mem_title: "Comment Devenir Membre CUCCU en 3 Étapes Simples",
+                mem_sub: "L'adhésion est ouverte à tout citoyen camerounais, résident, groupe Tontine/Njangi et entreprise locale.",
+                branch_tag: "Réseau National",
+                branch_title: "Nos Agences à Travers le Cameroun",
+                branch_sub: "Rendez-vous dans l'une de nos 7 agences interconnectées pour vos opérations et conseils financiers."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'EN' ? 'FR' : 'EN';
+            document.documentElement.lang = currentLang.toLowerCase();
+
+            // Update toggle button styling
+            const currentLabel = document.getElementById('currentLangLabel');
+            const altLabel = document.getElementById('altLangLabel');
+            if (currentLang === 'EN') {
+                currentLabel.textContent = 'EN';
+                currentLabel.className = 'text-emerald-900 font-extrabold';
+                altLabel.textContent = 'FR';
+                altLabel.className = 'text-slate-400';
+            } else {
+                currentLabel.textContent = 'FR';
+                currentLabel.className = 'text-emerald-900 font-extrabold';
+                altLabel.textContent = 'EN';
+                altLabel.className = 'text-slate-400';
+            }
+
+            // Apply translations
+            const dict = translations[currentLang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
+            showToast(currentLang === 'FR' ? 'Langue changée en Français (Cameroun)' : 'Language switched to English (Cameroon)');
+        }
+
+        // ==========================================
+        // 2. MOBILE NAVIGATION MENU
+        // ==========================================
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('mobileMenuIcon');
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+
+        // ==========================================
+        // 3. KEY METRICS ANIMATED COUNTERS
+        // ==========================================
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const decimals = parseInt(counter.getAttribute('data-decimals') || '0', 10);
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const duration = 1600;
+                const startTime = performance.now();
+
+                function updateCount(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease-out cubic
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const currentVal = target * eased;
+
+                    if (decimals > 0) {
+                        counter.textContent = currentVal.toFixed(decimals) + suffix;
+                    } else {
+                        counter.textContent = Math.floor(currentVal).toLocaleString('en-US') + suffix;
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.textContent = (decimals > 0 ? target.toFixed(decimals) : target.toLocaleString('en-US')) + suffix;
+                    }
+                }
+                requestAnimationFrame(updateCount);
+            });
+        }
+
+        // Trigger counters on load / intersection
+        window.addEventListener('DOMContentLoaded', () => {
+            animateCounters();
+            updateCalculator();
+        });
+
+        // ==========================================
+        // 4. PRODUCT & BRANCH FILTERING
+        // ==========================================
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const tabs = document.querySelectorAll('.prod-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-emerald-900', 'text-white', 'shadow-sm');
+                tab.classList.add('text-slate-600');
+            });
+
+            const activeTab = document.getElementById('tab-' + category);
+            if (activeTab) {
+                activeTab.classList.add('bg-emerald-900', 'text-white', 'shadow-sm');
+                activeTab.classList.remove('text-slate-600');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function filterBranches(city) {
+            const cards = document.querySelectorAll('.branch-card');
+            const buttons = document.querySelectorAll('.city-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-900', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            const activeBtn = document.getElementById('city-' + city);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-emerald-900', 'text-white');
+                activeBtn.classList.remove('bg-slate-100', 'text-slate-700');
+            }
+
+            cards.forEach(card => {
+                if (city === 'all' || card.getAttribute('data-city') === city) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // ==========================================
+        // 5. INTERACTIVE LOAN CALCULATOR (FCFA / XAF)
+        // ==========================================
+        function formatFCFA(amount) {
+            return Math.round(amount).toLocaleString('en-US') + ' FCFA';
+        }
+
+        function updateCalculator() {
+            const typeSelect = document.getElementById('loanTypeSelect');
+            const selectedOption = typeSelect.options[typeSelect.selectedIndex];
+            const monthlyRatePercent = parseFloat(selectedOption.getAttribute('data-rate'));
+            const r = monthlyRatePercent / 100;
+
+            const principal = parseFloat(document.getElementById('loanAmountRange').value);
+            const months = parseInt(document.getElementById('loanMonthsRange').value, 10);
+
+            // Standard reducing balance amortization formula: M = P * [ r(1+r)^n ] / [ (1+r)^n - 1 ]
+            const factor = Math.pow(1 + r, months);
+            const monthlyPayment = (principal * r * factor) / (factor - 1);
+            const totalRepayment = monthlyPayment * months;
+            const totalInterest = totalRepayment - principal;
+            const requiredSavings = principal / 3;
+
+            // Update UI Displays
+            document.getElementById('loanAmountDisplay').textContent = formatFCFA(principal);
+            document.getElementById('loanMonthsDisplay').textContent = months + (months === 1 ? ' Month' : ' Months');
+            document.getElementById('requiredSavingsDisplay').textContent = formatFCFA(requiredSavings);
+
+            document.getElementById('monthlyPaymentDisplay').textContent = formatFCFA(monthlyPayment);
+            document.getElementById('summaryPrincipal').textContent = formatFCFA(principal);
+            document.getElementById('summaryRate').textContent = monthlyRatePercent.toFixed(2) + '% / mo';
+            document.getElementById('summaryInterest').textContent = formatFCFA(totalInterest);
+            document.getElementById('summaryTotal').textContent = formatFCFA(totalRepayment);
+        }
+
+        function presetCalculator(type, amount, months) {
+            const select = document.getElementById('loanTypeSelect');
+            select.value = type;
+            document.getElementById('loanAmountRange').value = amount;
+            document.getElementById('loanMonthsRange').value = months;
+            updateCalculator();
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function applyFromCalculator() {
+            const typeSelect = document.getElementById('loanTypeSelect');
+            const loanLabel = typeSelect.options[typeSelect.selectedIndex].text.split(' (')[0];
+            const principal = document.getElementById('loanAmountDisplay').textContent;
+            const months = document.getElementById('loanMonthsDisplay').textContent;
+            const monthly = document.getElementById('monthlyPaymentDisplay').textContent;
+
+            openModal('loan', loanLabel, `${principal} over ${months} (Est. ${monthly}/month)`);
+        }
+
+        // ==========================================
+        // 6. MEMBERSHIP & LOAN APPLICATION MODAL
+        // ==========================================
+        function openModal(mode, preselectProduct = '', loanSummary = '') {
+            const modal = document.getElementById('applicationModal');
+            const form = document.getElementById('modalForm');
+            const successState = document.getElementById('modalSuccessState');
+            const badge = document.getElementById('modalBadge');
+            const title = document.getElementById('modalTitle');
+            const productSelect = document.getElementById('modalProductSelect');
+            const summaryBox = document.getElementById('loanDetailsSummaryBox');
+            const summaryText = document.getElementById('modalLoanSummaryText');
+
+            // Reset states
+            form.classList.remove('hidden');
+            successState.classList.add('hidden');
+            form.reset();
+
+            if (mode === 'loan') {
+                badge.textContent = 'Credit Facility Pre-Application';
+                title.textContent = 'Apply for a Cooperative Loan';
+            } else {
+                badge.textContent = 'Online Pre-Registration';
+                title.textContent = 'Become a CUCCU Member';
+            }
+
+            if (preselectProduct) {
+                for (let i = 0; i < productSelect.options.length; i++) {
+                    if (productSelect.options[i].text.toLowerCase().includes(preselectProduct.toLowerCase()) ||
+                        productSelect.options[i].value.toLowerCase().includes(preselectProduct.toLowerCase())) {
+                        productSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            if (loanSummary) {
+                summaryBox.classList.remove('hidden');
+                summaryText.textContent = loanSummary;
+            } else {
+                summaryBox.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('applicationModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('applicantName').value.trim();
+            const branch = document.getElementById('applicantBranch').value;
+            const product = document.getElementById('modalProductSelect').value;
+            const randomRef = 'CUCCU-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+            document.getElementById('modalForm').classList.add('hidden');
+            const successState = document.getElementById('modalSuccessState');
+            successState.classList.remove('hidden');
+
+            document.getElementById('referenceCodeBox').textContent = 'REF: ' + randomRef;
+            document.getElementById('modalSuccessMessage').innerHTML =
+                `Thank you, <strong>${name}</strong>. Your request for <strong>${product}</strong> has been assigned to our <strong>${branch}</strong> desk. Present this reference code along with your CNI to finalize onboarding.`;
+
+            showToast('Application submitted! Reference: ' + randomRef);
+        }
+
+        // Close modal when clicking outside dialog
+        document.getElementById('applicationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // ==========================================
+        // 7. CONTACT, NEWSLETTER & TOAST HELPERS
+        // ==========================================
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('contactFeedback');
+            feedback.textContent = '✓ Message received! A CUCCU advisor will call you back shortly.';
+            feedback.classList.remove('hidden');
+            e.target.reset();
+            showToast('Inquiry sent to CUCCU Member Support.');
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const msg = document.getElementById('newsletterMsg');
+            msg.textContent = '✓ Subscribed to CUCCU Quarterly Dividend & Member Bulletins.';
+            msg.classList.remove('hidden');
+            e.target.reset();
+            showToast('Successfully subscribed to CUCCU updates.');
+        }
+
+        let toastTimeout;
+        function showToast(message) {
+            const toast = document.getElementById('toastBanner');
+            const toastText = document.getElementById('toastText');
+            toastText.textContent = message;
+            toast.classList.remove('hidden');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
